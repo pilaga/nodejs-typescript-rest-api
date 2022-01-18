@@ -6,4 +6,10 @@ const router = (0, express_1.Router)();
 router.get('/', (req, res, next) => {
     res.status(200).json({ todos: todos });
 });
+router.post('/todo', (req, res, next) => {
+    const newTodo = {
+        id: new Date().toISOString(),
+        text: req.body.text
+    };
+});
 exports.default = router;
